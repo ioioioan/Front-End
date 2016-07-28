@@ -1,14 +1,18 @@
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip(); 
+});
+$(function(){ $("#current-year").html(new Date().getFullYear()); });
 //shrink on scroll
 function init() {
     window.addEventListener('scroll', function(e){
         var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-            shrinkOn = 300,
+            shrinkOn = 10,
             header = document.querySelector("header");
-        if (distanceY > shrinkOn) {
-            classie.add(header,"smaller");
+        if (distanceY > shrinkOn && !$("header").hasClass("stay-smaller")) {
+             $("header").addClass("smaller");
         } else {
-            if (classie.has(header,"smaller")) {
-                classie.remove(header,"smaller");
+            if ($("header").hasClass("smaller") && !$("header").hasClass("stay-smaller")) {
+                $("header").removeClass("smaller");
             }
         }
     });
@@ -31,9 +35,9 @@ pauseButton.addEventListener("click", function() {
     vid.classList.toggle("stopfade");
 	if (vid.paused) {
 vid.play();
-		pauseButton.innerHTML = "<span class=\"glyphicon glyphicon-pause\" aria-label=\"Pause\">";
+		pauseButton.innerHTML = "<span class=\"glyphicon glyphicon-play\" aria-label=\"Pause\">";
 	} else {
         vid.pause();
-        pauseButton.innerHTML = "<span class=\"glyphicon glyphicon-play\" aria-label=\"Play\">";
+        pauseButton.innerHTML = "<span class=\"glyphicon glyphicon-pause\" aria-label=\"Play\">";
 	}
 })

@@ -2,235 +2,410 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="">
-<!--<![endif]-->
 <!--[if lt IE 9]>
-<script>
-	document.createElement('video');
-</script>
+	<script>
+		document.createElement('video');
+	</script>
 <![endif]-->
+<html lang="en">
 
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title></title>
+	<title>Digital Accessibility Centre - DAC</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-
 	<link rel="stylesheet" href="css/bootstrap-theme.css">
 
-	<script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-
-	<style>
-		/*move to theme when ready*/
-		video { display: block; }
-		@media (min-width: @screen-sm-min) {
-			html {
-				background: url(https://cdn1.evernote.com/evernote.com/img/homepage/homepage-hero-video-desktop-still.jpg) #000 no-repeat center center fixed;
-			}
-			#bgvid {
-				display: none;
-			}
-		}
-		video#bgvid {
-			transition: 1s opacity;
-			position: relative;
-			width: 100%;
-			height: auto;
-			bottom: -4px;
-		}
-		.stopfade { opacity: .5; }
-		#home-video-content{
-			width: 100%;
-			position: absolute;
-			top: 40%;
-		}
-
-		/*shrink on scroll*/
-		
-	</style>
-
 </head>
-
 <body>
-	<!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-	<a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
-	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-		<div class="container-fluid container">
-			 <div class="navbar-header">
-				<a class="navbar-brand" href="#">
-					<img alt="Brand" src="img/dac_logo200x105.jpg">
-				</a>
+		<header>
+			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+				<div>
+					<!--[if lt IE 10]>
+						<span class="header-notice">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</span>
+					<![endif]-->
+					<noscript>
+						<span class="header-notice">We have detected you have Javascript disabled. Unfortunately, some features on this page may not function correctly.</span>
+					</noscript>
+					<a href="#content" class="sr-only sr-only-focusable header-notice"><span>Skip to main content</span></a>
+				</div>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="navbar-header col-xs-6 col-sm-4 col-md-4">
+							<a class="navbar-brand" href="#" id="logo"><span></span></a>
+						</div>
+						<div class="hidden-xs col-xs-6 col-sm-8 col-md-8">
+							<ul class="nav navbar-nav pull-right nav-pills">
+								<li role="header link"><a href="#">AccessIN</a></li>
+								<li role="header link">&ensp;</li>
+								<li role="header link" 	class="social-media"><a href="#"><img src="icon/1469573946_mark-github.svg" alt="GitHub"></a></li>
+								<li role="header link"  class="social-media"><a href="#"><img src="icon/1469573976_facebook-logo.svg" alt="Facebook"></a></li>
+								<li role="header link"  class="social-media"><a href="#"><img src="icon/1469574026_Twitter.svg" alt="Twitter"></a></li>
+								<li role="header link"  class="social-media"><a href="#"><img src="icon/1469574051_video-youtube.svg" alt="YouTube"></a></li>
+								<li role="header link"  class="social-media"><a href="#"><img src="icon/1469574110_linkedin-logo.svg" alt="LinkedIn"></a></li>
+								<li role="header link"  class="social-media"><a href="#"><img src="icon/1469574140_skype-logo.svg" alt="Skype"></a></li>
+								<li role="header link"  class="social-media">&ensp;</li>
+								<li role="header link">&ensp;</li>
+								<li role="header link" class="tooltip-button-wrapper" data-toggle="tooltip" data-placement="bottom" title="Menu"><button role="button" type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#main-menu-modal" data-backdrop="static" data-keyboard="false"><span class="glyphicon glyphicon-menu-hamburger" aria-label="Website Menu"></button></li>
+							</ul>
+						</div>
+						<div id="mobile-menu" class="visible-xs col-xs-6">	
+							<ul class="nav navbar-nav nav-pills pull-right">
+								<li role="header link"><a href="#">A</a></li>
+								<li role="header link">&ensp;</li>
+								<li role="header link"><button id="menu-hamburger-button" role="button" type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#main-menu-modal" data-backdrop="static" data-keyboard="false"><span class="glyphicon glyphicon-menu-hamburger" aria-label="Website Menu"></span></button></li>
+							</ul>
+						</div>
+					</div>	
+				</div>
+			</nav>
+		</header>
+		<div id="main-menu-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Website Menu">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content container">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<br>
+						<h1 class="modal-title sr-only">Website Menu</h1>
+						<form role="search" class="form-inline">
+							<div class="input-group form-group">
+								<label for="search" class="sr-only">Search:</label>
+								<input id="search" type="search" class="form-control" placeholder="Search">
+								<span class="input-group-btn">
+									<button type="submit" name="submit" class="btn btn-default">Submit</button>
+								</span>
+							</div>
+						</form>
+						<ul class="nav navbar-nav nav-pills visible-xs center-block">
+							<li role="header link" class="social-media"><a href="#"><img src="icon/1469573946_mark-github.svg" alt="GitHub"></a></li>
+							<li role="header link">&ensp;</li>
+							<li role="header link"  class="social-media"><a href="#"><img src="icon/1469573976_facebook-logo.svg" alt="Facebook"></a></li>
+							<li role="header link"  class="social-media"><a href="#"><img src="icon/1469574026_Twitter.svg" alt="Twitter"></a></li>
+							<li role="header link"  class="social-media"><a href="#"><img src="icon/1469574051_video-youtube.svg" alt="YouTube"></a></li>
+							<li role="header link"  class="social-media"><a href="#"><img src="icon/1469574110_linkedin-logo.svg" alt="LinkedIn"></a></li>
+							<li role="header link"  class="social-media"><a href="#"><img src="icon/1469574140_skype-logo.svg" alt="Skype"></a></li>
+						</ul>	
+					</div>
+					<div class="modal-body">
+						<div class="clearfix"></div>
+						<div class="row">
+							<div class="col-xs-12 col-sm-6 col-md-3">
+								<div class="thumbnail">
+									<img src="http://placehold.it/255x150" class="img-responsive" alt="Menu option">
+									<div class="caption">
+										<h2 class="h3"><a href="#">Menu option</a></h2>
+										<p>...</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-3">
+								<div class="thumbnail">
+									<img src="http://placehold.it/255x150" class="img-responsive" alt="Menu option">
+									<div class="caption">
+										<h2 class="h3"><a href="#">Menu option</a></h2>
+										<p>...</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-3">
+								<div class="thumbnail">
+									<img src="http://placehold.it/255x150" class="img-responsive" alt="Menu option">
+									<div class="caption">
+										<h2 class="h3"><a href="#">Menu option</a></h2>
+										<p>...</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-3">
+								<div class="thumbnail">
+									<img src="http://placehold.it/255x150" class="img-responsive" alt="Menu option">
+									<div class="caption">
+										<h2 class="h3"><a href="#">Menu option</a></h2>
+										<p>...</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-3">
+								<div class="thumbnail">
+									<img src="http://placehold.it/255x150" class="img-responsive" alt="Menu option">
+									<div class="caption">
+										<h2 class="h3"><a href="#">Menu option</a></h2>
+										<p>...</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-3">
+								<div class="thumbnail">
+									<img src="http://placehold.it/255x150" class="img-responsive" alt="Menu option">
+									<div class="caption">
+										<h2 class="h3"><a href="#">Menu option</a></h2>
+										<p>...</p>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+				</div>
+				</div>
 			</div>
-			<ul class="nav navbar-nav navbar-right">
-				<li role="presentation"><a href="#">AccessIn</a></li>
-				<li role="presentation"><a href="#">YouTube</a></li>
-				<li role="presentation"><a href="#">Twitter</a></li>
-				<li role="presentation"><a href="#">Facebook</a></li>
-				<li role="presentation"><a href="#">LinkedIn</a></li>
-				<li role="presentation"><a href="#">Skype</a></li>
-				<li role="presentation"><button role="button" type="button" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-menu-hamburger" aria-label="Website Menu"></span></button></li>
-			</ul>	
 		</div>
-	</nav>
-
-	<!-- Main jumbotron for a primary marketing message or call to action -->
 <section>
-	<h1 class="sr-only">Home</h1>
-	<div class="jumbotron">
+	<div id="home-video" class="jumbotron">
+		<h1 class="sr-only">Home</h1>
 		<video autoplay loop poster="https://cdn1.evernote.com/evernote.com/img/homepage/homepage-hero-video-desktop-still.jpg" id="bgvid">
-			<source src="https://cdn1.evernote.com/evernote.com/video/homepage/homepage-hero-video.webm" type="video/webm">
-			<source src="https://cdn1.evernote.com/evernote.com/video/homepage/homepage-hero-video.mp4" type="video/mp4">
+			<source src="https://cdn1.evernote.com/evernote.com/video/homepage/homepage-hero-video.webm!" type="video/webm">
+			<source src="https://cdn1.evernote.com/evernote.com/video/homepage/homepage-hero-video.mp4!" type="video/mp4">
 		</video>
-		<div class="container text-center" id="home-video-content">
-			<div>Because everyone matters.</div>
-			<p>Real-world digital accessibility testing and consulting.</p>
-			<button id="vidpause" role="button" type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-pause" aria-label="Pause"></span></button>
+		<div class="text-center" id="home-video-content">
+			<div class="h1"><span class="opaque-highlight-grey">Because everyone matters.</span></div>
+			<p class="h3"><span class="opaque-highlight-grey">Digital accessibility testing and consulting.</span></p>
+			<br>
+			<button id="vidpause" role="button" type="button" class="btn btn-default btn-naked hidden-xs"><span class="glyphicon glyphicon-pause" aria-label="Pause"></span></button>
+			<div class="clearfix"></div>
+			<a id="first-chevron" class="down-chevron hidden-xs" href="#"><span class="glyphicon glyphicon-chevron-down"></span></a>
 		</div>
 	</div>
 </section>
-
-<!-- dynamic banner section-->
-
+	<p>OPtional banner here</p>
+<hr>
+<div class="clearfix"></div>
 <section>
-
-</section>
-
-<section>
-	<div class="container">
-		<!-- Example row of columns -->
+	<div id="home-items" class="container">
 		<div class="row">
-			<div class="col-md-12">
-				<div class="col-md-6">
-					<p></p>
+			<div class="col-md-12 home-item-container home-item-left">
+				<div class="home-item-image-container">
+					<img src="http://placehold.it/500x400" class="img-responsive home-item-image" alt="Body image">
 				</div>
-				<div class="col-md-6">
-					<h2>Heading</h2>
-					<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
-						nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-					</p>
-				</div>
-			</div>
-			<div class="col-md-12">
-				<div class="col-md-6">
-					<h2>Heading</h2>
-					<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
-						nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-					</p>
-				</div>
-				<div class="col-md-6">
-					<p></p>
-				</div>
-			</div>
-			<div class="col-md-12">
-				<div class="col-md-6">
-					<p></p>
-				</div>
-				<div class="col-md-6">
-					<h2>Heading</h2>
-					<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
-						nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-					</p>
+				<div class="home-item-text-container">
+					<div class="home-item-text">
+						<h2><a href="#">Heading</a></h2>
+						<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+							nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>
-
+		<div class="row">
+			<div class="col-md-12 home-item-container home-item-right">
+				<div class="home-item-image-container">
+					<img src="http://placehold.it/500x400" class="img-responsive home-item-image" alt="Body image">
+				</div>
+				<div class="home-item-text-container">
+					<div class="home-item-text">
+						<h2><a href="#">Heading</a></h2>
+						<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+							nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 home-item-container home-item-left">
+				<div class="home-item-image-container">
+					<img src="http://placehold.it/500x400" class="img-responsive home-item-image" alt="Body image">
+				</div>
+				<div class="home-item-text-container">
+					<div class="home-item-text">
+						<h2><a href="#">Heading</a></h2>
+						<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+							nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 home-item-container home-item-right">
+				<div class="home-item-image-container">
+					<img src="http://placehold.it/500x400" class="img-responsive home-item-image" alt="Body image">
+				</div>
+				<div class="home-item-text-container">
+					<div class="home-item-text">
+						<h2><a href="#">Heading</a></h2>
+						<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+							nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 	<!-- /container -->
 </section>
+<hr>
 <section>
 	<!-- Secondary jumbotron for a contact or request callback form -->
-	<div class="jumbotron">
-		<div class="container">
+	<div id="contact-form" class="jumbotron">
+		<div class="container text-center">
 			<h2>Get started with us today.</h2>
-			<form>
-				<label for="name" class="sr-only">Name:</label>
-				<input id="name" type="text" name="textfield" placeholder="Name"  required>
-				<label for="name" class="sr-only">Email:</label>
-				<input id="name" type="text" name="textfield" placeholder="Email" required>
-				<label for="name" class="sr-only">Phone:</label>
-				<input id="name" type="text" name="textfield" placeholder="Phone (optional)">
-				<fieldset>
-					<legend>How would you like us to contact you?</legend>
-					<input id="email-me-back" type="radio" name="contact" value="email-me-back">
-					<label for="email-me-back">Email me back</label><br>
-					<input id="phone-me-back" type="radio" name="contact" value="phone-me-backwoday">
-					<label for="phone-me-back">Phone me back</label><br>
-				</fieldset>
-				<input type="submit" name="submit" value="Liaise with me">
+			<br>
+			<form role="contact" class="form-horizontal">
+				<div class="form-group">
+					<div class="col-md-4 col-md-offset-4">
+						<fieldset>
+							<legend class="sr-only">Please enter your details</legend>
+							<label for="name" class="sr-only">Name:</label>
+							<input id="name" type="text" name="textfield" placeholder="Name" class="form-control" required>
+							<br>
+							<label for="name" class="sr-only">Email:</label>
+							<input id="name" type="email" name="textfield" placeholder="Email" class="form-control" required>
+							<br>
+							<label for="name" class="sr-only">Phone:</label>
+							<input id="name" type="tel" name="textfield" placeholder="Phone (optional)" class="form-control">
+							<br>
+						</fieldset>
+						<fieldset>
+							<legend class="sr-only">How would you like us to contact you?</legend>
+							<label for="email-me-back" class="radio-inline">
+								<input id="email-me-back" type="radio" name="contact" value="email-me-back" checked>Email me back
+							</label>
+							<label for="phone-me-back" class="radio-inline">
+								<input id="phone-me-back" type="radio" name="contact" value="phone-me-backwoday" disabled>Phone me back
+							</label>
+						</fieldset>
+						<br>
+						<button class="btn btn-primary btn-lg btn-block" type="submit" name="submit">Liaise with me</button>
+					</div>
+				</div>
 			</form>
 		</div>
 	</div>
 </section>
-	
+	<hr>
 <section>
-	<div class="container text-center">
-		<h2>We work with incredible clients ensuring the highest standard of digital accessibility.</h2>
+	<div id="client-thumbnails" class="container">
+		<h2 class="text-center">We work with incredible clients.</h2>
+		<p class="text-center h4">Our experts have worked to achieve a high standard of accessibility on a range of products and services.</p>
+		<br>
 		<div class="row">
-			<div class="col-md-2">
-				<img alt="test" src="img/dac_logo200x105.jpg">
+			<div class="col-xs-6 col-md-3 thumbnail">
+				<img src="http://placehold.it/255x150" alt="Client">
 			</div>
-			<div class="col-md-2">
-				<img alt="test" src="img/dac_logo200x105.jpg">
-			</div>
-			<div class="col-md-2">
-				<img alt="test" src="img/dac_logo200x105.jpg">
-			</div>
-			<div class="col-md-2">
-				<img alt="test" src="img/dac_logo200x105.jpg">
-			</div>
-			<div class="col-md-2">
-				<img alt="test" src="img/dac_logo200x105.jpg">
-			</div>
-			<div class="col-md-2">
-				<img alt="test" src="img/dac_logo200x105.jpg">
-			</div>
-			<div class="col-md-2">
-				<img alt="test" src="img/dac_logo200x105.jpg">
-			</div>
-			<div class="col-md-2">
-				<img alt="test" src="img/dac_logo200x105.jpg">
-			</div>
-			<div class="col-md-2">
-				<img alt="test" src="img/dac_logo200x105.jpg">
-			</div>
-			<div class="col-md-2">
-				<img alt="test" src="img/dac_logo200x105.jpg">
-			</div>
-			<div class="col-md-2">
-				<img alt="test" src="img/dac_logo200x105.jpg">
-			</div>
-			<div class="col-md-2">
-				<img alt="test" src="img/dac_logo200x105.jpg">
+			<div class="col-xs-6 col-md-3 thumbnail">
+				<img src="http://placehold.it/255x150" alt="Client">
+			</div><div class="col-xs-6 col-md-3 thumbnail">
+				<img src="http://placehold.it/255x150" alt="Client">
+			</div><div class="col-xs-6 col-md-3 thumbnail">
+				<img src="http://placehold.it/255x150" alt="Client">
+			</div><div class="col-xs-6 col-md-3 thumbnail">
+				<img src="http://placehold.it/255x150" alt="Client">
+			</div><div class="col-xs-6 col-md-3 thumbnail">
+				<img src="http://placehold.it/255x150" alt="Client">
+			</div><div class="col-xs-6 col-md-3 thumbnail">
+				<img src="http://placehold.it/255x150" alt="Client">
+			</div><div class="col-xs-6 col-md-3 thumbnail">
+				<img src="http://placehold.it/255x150" alt="Client">
 			</div>
 		</div>
+		
+
+		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
+				<div class="item active">
+					 <blockquote>
+						<p>"<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</span>"</p>
+						<footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+					</blockquote>
+				</div>
+				<div class="item">
+					<blockquote>
+						<p>"<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</span>"</p>
+						<footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+					</blockquote>
+				</div>
+			</div>
+		</div>
+
+		 <!-- Controls -->
+		<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		
+		<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+</div>
+
 	</div>
 </section>
-		<hr>
-
-		<footer>
-			<div class="container">
-				<p>&copy; Digital Accessibility Centre <span id="current-year"></span></p>
-				<a href="#">Accessibility</a>
-			</div>
+	<hr>
+	<footer class="footer">
+		<div id="sitemap" class="container">
+			<nav>					
+				<h2 class="sr-only">Sitemap</h2>
+				<ul class="inline-list">
+					<li>
+						<h3 class="h5"><strong>List category</strong></h3>
+						<ul>
+							<li><a href="#">List item</a></li>
+							<li><a href="#">List item</a></li>
+							<li><a href="#">List item</a></li>
+						</ul>
+					</li>
+					<li>
+						<h3 class="h5"><strong>List category</strong></h3>
+						<ul>
+							<li><a href="#">List item</a></li>
+							<li><a href="#">List item</a></li>
+							<li><a href="#">List item</a></li>
+						</ul>
+					</li>
+					<li>
+						<h3 class="h5"><strong>List category</strong></h3>
+						<ul>
+							<li><a href="#">List item</a></li>
+							<li><a href="#">List item</a></li>
+							<li><a href="#">List item</a></li>
+						</ul>
+					</li>
+					<li>
+						<h3 class="h5"><strong>List category</strong></h3>
+						<ul>
+							<li><a href="#">List item</a></li>
+							<li><a href="#">List item</a></li>
+							<li><a href="#">List item</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<br>
+		<div id="bottom-footer" class="container-fluid">
+			<span class="pull-left copy-text">&copy; Digital Accessibility Centre <span id="current-year"></span>&emsp; Company Reg. No: 07413852</span>
+			<nav>
+				<ul class="pull-right inline-list">
+					<li role="footer item"><a href="#">Accessibility</a></li>
+					<li role="footer item"><a href="#">Privacy</a></li>
+				</ul>
+			</na>
+		</div>
 	<!-- /container -->
-		</footer>
-	
+	</footer>
+	<!--<script type="text/javascript" src="https://secure.skypeassets.com/i/scom/js/skype-uri.js"></script>
+	<script type="text/javascript">
+	Skype.ui({
+		"name": "call",
+		"element": "SkypeButton",
+		"participants": ["ioioioan"]
+	});
+	$(function(){  
+		$("#SkypeButton img").attr("src", "icon/1469574140_skype-logo.svg");
+	});
+	</script>-->
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
-	<script>$(function(){var d = new Date(); var y = d.getFullYear().toString(); $("#current-year").text( y );});</script>
-
 	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-
-	<script src="js/vendor/bootstrap.min.js"></script>
-
+	<script src="js/bootstrap.min.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/respond.js"></script>
 </body>
 
 </html>
